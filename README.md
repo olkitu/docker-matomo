@@ -67,6 +67,6 @@ admin / Qwerty1234
 
 ## Develop & Testing
 
-Copy `.env.example` to `.env` and setup the environment variables. You must generate SALT. This used for hash passwords.
+Copy `.env.example` to `.env` and setup the environment variables.
 
 You can then use `docker-compose.yml` in this repository to build and test.

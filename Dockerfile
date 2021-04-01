@@ -13,6 +13,11 @@ COPY configs/supervisor.conf /etc/supervisor/conf.d/supervisord.conf
 COPY configs/nginx-default.conf /etc/nginx/conf.d/default.conf
 COPY configs/matomo-config.ini.php /var/www/html/config/config.ini.php
 
+
+RUN { \
+		echo 'expose_php = Off'; \
+	} > /usr/local/etc/php/conf.d/php-production-override.ini
+
 # Copy entrypoint
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod 700 /docker-entrypoint.sh \
