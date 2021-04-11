@@ -5,15 +5,14 @@ services:
     image: olkitu/docker-matomo
     ports:
     - 8080:80
-    restart: always
     env_file: .env
     depends_on:
-      - db
+      db:
+        condition: service_healthy 
   db:
     image: mariadb
     ports:
     - 3306:3306
-    restart: always
     env_file: .env
     environment:
       MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
@@ -22,3 +21,5 @@ services:
       MYSQL_PASSWORD: ${MATOMO_DATABASE_PASSWORD}
     volumes:
       - ./sql:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: mysqladmin ping -h 127.0.0.1
