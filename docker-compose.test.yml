@@ -1,6 +1,6 @@
 version: "2.4"
 services:
-  matomo:
+  sut:
     build: .
     image: olkitu/docker-matomo
     ports:
