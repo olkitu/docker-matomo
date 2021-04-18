@@ -1,5 +1,7 @@
 # Matomo Alpine & Nginx & Supervisor
 
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/olkitu/docker-matomo) ![Docker Pulls](https://img.shields.io/docker/pulls/olkitu/docker-matomo)
+
 Based Official Matomo Alpine image: https://hub.docker.com/_/matomo
 
 This is Matomo installation with few features:
