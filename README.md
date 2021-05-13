@@ -41,7 +41,7 @@ services:
       MATOMO_USE_SSL: 1
       # If behind of Reverse Proxy
       MATOMO_ASUME_SECURE_PROTOCOL: 1
-      MATOMO_PROXY_CLIENT_HEADERS: HTTP_X_FORWARDED_HOST
+      MATOMO_PROXY_CLIENT_HEADERS: HTTP_X_FORWARDED_FOR
       MATOMO_SALT: changeme
       # Email Configuration
       MATOMO_MAIL_TRANSPORT: smtp
