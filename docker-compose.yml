@@ -21,5 +21,9 @@ services:
       MYSQL_PASSWORD: ${MATOMO_DATABASE_PASSWORD}
     volumes:
       - ./sql:/docker-entrypoint-initdb.d
+      - matomo-db:/var/lib/mysql
     healthcheck:
       test: mysqladmin ping -h 127.0.0.1
+
+volumes:
+  matomo-db:
