@@ -14,6 +14,10 @@ if [ ! -e matomo.php ]; then
 	chown -R www-data:www-data .
 fi
 
+# Download latest database to misc directory automatically on startup
+wget -O /var/www/html/misc/DBIP-City.mmdb https://download.db-ip.com/free/dbip-city-lite-`date +%Y-%m`.mmdb.gz
+chown www-data:www-data /var/www/html/misc/DBIP-City.mmdb
+
 # first arg is `-f` or `--some-option`
 if [ "${1#-}" != "$1" ]; then
         set -- /usr/bin/supervisord -n -c /etc/supervisor/conf.d/supervisord.conf "$@"
