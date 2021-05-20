@@ -24,7 +24,8 @@ RUN apk add --no-cache nginx supervisor gettext moreutils \
     && mkdir /run/nginx/ \
     && rm -rf /var/log/nginx/access.log /var/log/nginx/error.log \
     && ln -sf /dev/stdout /var/log/nginx/access.log \
-    && ln -sf /dev/stderr /var/log/nginx/error.log
+    && ln -sf /dev/stderr /var/log/nginx/error.log \
+    && wget -q -O /tmp/DBIP-City.mmdb.gz https://download.db-ip.com/free/dbip-city-lite-`date +%Y-%m`.mmdb.gz
 
 # Copy configurations
 COPY configs/supervisor.conf /etc/supervisor/conf.d/supervisord.conf

@@ -14,10 +14,11 @@ if [ ! -e matomo.php ]; then
 	chown -R www-data:www-data .
 fi
 
-# Download latest database to misc directory automatically on startup
-wget -q -O /var/www/html/misc/DBIP-City.mmdb.gz https://download.db-ip.com/free/dbip-city-lite-`date +%Y-%m`.mmdb.gz \
-&& gzip -d /var/www/html/misc/DBIP-City.mmdb.gz \
-&& chown www-data:www-data /var/www/html/misc/DBIP-City.mmdb
+if [ ! -e '/var/www/html/misc/DBIP-City.mmdb' ]; then
+    mv /tmp/DBIP-City.mmdb.gz /var/www/html/misc/DBIP-City.mmdb.gz
+    gzip -d /var/www/html/misc/DBIP-City.mmdb.gz
+    chown www-data:www-data /var/www/html/misc/DBIP-City.mmdb
+fi
 
 # first arg is `-f` or `--some-option`
 if [ "${1#-}" != "$1" ]; then
