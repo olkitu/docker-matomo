@@ -1,6 +1,6 @@
 # Matomo Alpine & Nginx & Supervisor
 
-![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/olkitu/docker-matomo) ![Docker Pulls](https://img.shields.io/docker/pulls/olkitu/docker-matomo)
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/olkitu/docker-matomo/Docker/main)
 
 Based Official Matomo Alpine image: https://hub.docker.com/_/matomo
 
@@ -17,7 +17,7 @@ This is recommend deploy to Docker Swarm but you can also deploy this locally.
 version: "3"
 services:
   matomo:
-    image: olkitu/docker-matomo
+    image: ghcr.io/olkitu/docker-matomo
     deploy:
       replicas: 1
       update_config:
