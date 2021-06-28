@@ -21,7 +21,7 @@ ENV MATOMO_DATABASE_HOST=localhost \
 
 # Install Nginx and Supervisor: https://github.com/olkitu/docker-nginx-php-fpm/blob/main/Dockerfile
 RUN apk add --no-cache nginx supervisor gettext moreutils \
-    && mkdir /run/nginx/ \
+    && mkdir -p /run/nginx/ \
     && rm -rf /var/log/nginx/access.log /var/log/nginx/error.log \
     && ln -sf /dev/stdout /var/log/nginx/access.log \
     && ln -sf /dev/stderr /var/log/nginx/error.log \
