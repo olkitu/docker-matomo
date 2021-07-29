@@ -1,4 +1,4 @@
-FROM matomo:4.3.1-fpm-alpine
+FROM matomo:4.4.0-fpm-alpine
 
 # Default environment variables
 ENV MATOMO_DATABASE_HOST=localhost \
@@ -29,7 +29,7 @@ RUN apk add --no-cache nginx supervisor gettext moreutils \
 
 # Copy configurations
 COPY configs/supervisor.conf /etc/supervisor/conf.d/supervisord.conf
-COPY configs/nginx-default.conf /etc/nginx/conf.d/default.conf
+COPY configs/nginx-default.conf /etc/nginx/http.d/default.conf
 COPY configs/matomo-config.ini.php /var/www/html/config/config.ini.php
 
 
