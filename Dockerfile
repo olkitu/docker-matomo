@@ -1,4 +1,4 @@
-FROM matomo:4.6.1-fpm-alpine
+FROM matomo:4.6.2-fpm-alpine
 
 # Default environment variables
 ENV MATOMO_DATABASE_HOST=localhost \
